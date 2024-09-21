@@ -21,6 +21,12 @@ sed -i 's/192.168.1.1/192.168.3.1/g' package/base-files/files/bin/config_generat
 git clone https://github.com/EOYOHOO/UA2F.git package/UA2F
 git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
 
+# 删除原默认主题
+rm -rf package/lean/luci-theme-argon
+rm -rf package/lean/luci-theme-bootstrap
+rm -rf package/lean/luci-theme-material
+rm -rf package/lean/luci-theme-netgear
+
 #取消原主题luci-theme-bootstrap为默认主题
 sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 
