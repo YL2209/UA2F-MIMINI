@@ -30,12 +30,12 @@ echo "" >> package/lean/default-settings/files/zzz-default-settings
 echo "exit 0" >> package/lean/default-settings/files/zzz-default-settings
 
 # 删除原默认主题
-rm -rf feeds/luic/themes/luci-theme-argon
-rm -rf feeds/luic/themes/luci-theme-argon-mod
-rm -rf feeds/luic/themes/luci-theme-bootstrap
-rm -rf feeds/luic/themes/luci-theme-design
-rm -rf feeds/luic/themes/luci-theme-material
-rm -rf feeds/luic/themes/luci-theme-netgear
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-argon-mod
+rm -rf feeds/luci/themes/luci-theme-bootstrap
+rm -rf feeds/luci/themes/luci-theme-design
+rm -rf feeds/luci/themes/luci-theme-material
+rm -rf feeds/luci/themes/luci-theme-netgear
 
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
 
