@@ -23,20 +23,19 @@ git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
 
 # 状态系统增加个性信息
 sed -i "s/exit 0//" package/lean/default-settings/files/zzz-default-settings
-
 echo "sed -i '/CPU usage/a\<tr><td width=\"33%\">关于</td><td><a class=\"author-blog\" href=\"https://www.naokuo.top\">作者博客</a>&nbsp;&nbsp;&nbsp;<a class=\"author-blog\" href=\"https://github.com/YL2209/MI-R4A-breed-openwrt\">编译源地址</a>&nbsp;&nbsp;&nbsp;<a class=\"author-blog\" href=\"https://space.bilibili.com/359789531\">哔哩哔哩</a></td></tr>' /usr/lib/lua/luci/view/admin_status/index.htm" >> package/lean/default-settings/files/zzz-default-settings
 echo "sed -i '/关于/a\<tr><td width=\"33%\">天气</td><td><iframe width=\"640\" scrolling=\"no\" height=\"75\" frameborder=\"0\" allowtransparency=\"true\" src=\"https://i.tianqi.com?c=code&id=39&color=%23FF7600&icon=3&num=2&site=12\"></iframe></td></tr>' /usr/lib/lua/luci/view/admin_status/index.htm" >> package/lean/default-settings/files/zzz-default-settings
-echo "sed -i '/天气/a\<tr><td width=\"33%\"> </td><td class=\"container\" style=\"height:200px;\"><canvas class=\"illo\" width=\"640\" height=\"640\" style=\"max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;\"></canvas></td></tr>' /usr/lib/lua/luci/view/admin_status/index.htm" >> package/lean/default-settings/files/zzz-default-settings
-
 echo "" >> package/lean/default-settings/files/zzz-default-settings
 echo "" >> package/lean/default-settings/files/zzz-default-settings
 echo "exit 0" >> package/lean/default-settings/files/zzz-default-settings
 
 # 删除原默认主题
-rm -rf package/lean/luci-theme-argon
-rm -rf package/lean/luci-theme-bootstrap
-rm -rf package/lean/luci-theme-material
-rm -rf package/lean/luci-theme-netgear
+rm -rf feeds/luic/themes/luci-theme-argon
+rm -rf feeds/luic/themes/luci-theme-argon-mod
+rm -rf feeds/luic/themes/luci-theme-bootstrap
+rm -rf feeds/luic/themes/luci-theme-design
+rm -rf feeds/luic/themes/luci-theme-material
+rm -rf feeds/luic/themes/luci-theme-netgear
 
 git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
 
