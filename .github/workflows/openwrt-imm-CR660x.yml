@@ -20,7 +20,7 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: imm.default
-  CONFIG_FILE: imm.config
+  CONFIG_FILE: CR660x.imm.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2-imm.sh
   UPLOAD_BIN_DIR: true
