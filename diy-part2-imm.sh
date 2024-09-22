@@ -23,11 +23,6 @@ git clone https://github.com/EOYOHOO/rkp-ipid.git package/rkp-ipid
 
 # 删除原默认主题
 rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/luci/themes/luci-theme-argon-mod
-rm -rf feeds/luci/themes/luci-theme-bootstrap
-rm -rf feeds/luci/themes/luci-theme-design
-rm -rf feeds/luci/themes/luci-theme-material
-rm -rf feeds/luci/themes/luci-theme-netgear
 
 git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
 git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
