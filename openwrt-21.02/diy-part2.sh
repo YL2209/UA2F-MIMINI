@@ -38,6 +38,9 @@ git clone https://ghproxy.net/https://github.com/Zxilly/UA2F -b v4.9.2 package/u
 # 增加 UA2F 需要的从 CONFIG_NETFILTER_NETLINK_GLUE_CT=y
 awk '/# Netfilter Extensions/{print; getline; if ($0 ~ /^\*/) {print; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"} else {print $0; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"}; next} 1' .config > .config.tmp && mv .config.tmp .config
 
+git clone https://github.com/YL2209/luci-app-campus-network-mac.git package/luci-app-campus-network-mac
+chmod 755 package/luci-app-campus-network-mac/luci-app-wan-mac/root/etc/init.d/wan_mac
+
 #更改主机型号，支持中文。 
 sed -i 's/model = "Xiaomi MiWiFi Mini"/model = "小米 mini 校园网专用"/g' target/linux/ramips/dts/mt7620a_xiaomi_miwifi-mini.dts
 
