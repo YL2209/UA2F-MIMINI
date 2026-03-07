@@ -26,12 +26,6 @@ sed -i 's/luci-theme-bootstrap/luci-theme-alpha/g' ./feeds/luci/collections/luci
 git clone https://github.com/YL2209/luci-theme-alpha.git package/luci-theme-alpha
 git clone https://github.com/YL2209/luci-app-alpha-config.git package/luci-app-alpha-config
 
-rm -rf package/feeds/luci/luci-app-ua2f
-# rm -rf package/feeds/luci/luci-app-appfilter
-# rm -rf package/feeds/packages/open-app-filter
-# git clone https://github.com/destan19/OpenAppFilter.git package/luci-app-appfilter
-git clone https://github.com/YL2209/luci-app-ua2f.git package/luci-app-ua2f
-git clone https://github.com/YL2209/luci-app-campus-network-login.git package/luci-app-campus-network-login
 
 # 修改 UA2F 的版本
 sed -i 's/^PKG_VERSION:=.*/PKG_VERSION:=4.9.2/' package/feeds/packages/ua2f/Makefile
@@ -39,9 +33,6 @@ sed -i 's/^PKG_HASH:=.*/PKG_HASH:=02a20e8fc5d7c3c6999ad6143c2d4496b40b5b85286211
 
 # 增加 UA2F 需要的从 CONFIG_NETFILTER_NETLINK_GLUE_CT=y
 awk '/# Netfilter Extensions/{print; getline; if ($0 ~ /^\*/) {print; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"} else {print $0; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"}; next} 1' .config > .config.tmp && mv .config.tmp .config
-
-git clone https://github.com/YL2209/luci-app-campus-network-mac.git package/luci-app-campus-network-mac
-chmod 755 package/luci-app-campus-network-mac/luci-app-wan-mac/root/etc/init.d/wan_mac
 
 #更改主机型号，支持中文。 
 sed -i 's/model = "Xiaomi MiWiFi Mini"/model = "小米 MINI 校园网专用"/g' target/linux/ramips/dts/mt7620a_xiaomi_miwifi-mini.dts
