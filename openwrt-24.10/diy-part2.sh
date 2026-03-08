@@ -13,23 +13,9 @@
 # Modify default IP
 #sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 
-# Modify default theme
-#sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
-
-# Modify hostname
-#sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
-
 # 修改 alpha 为默认主题
-sed -i 's/luci-theme-bootstrap/luci-theme-alpha/g' ./feeds/luci/collections/luci-light/Makefile
-# sed -i 's/.nowrap:not(.td){white-space:nowrap}/.nowrap:not(.td){white-space:unset}/g' package/feeds/luci/luci-theme-argon/htdocs/luci-static/argon/css/cascade.css
-# rm -rf package/feeds/luci/luci-theme-argon
-git clone https://github.com/YL2209/luci-theme-alpha.git package/luci-theme-alpha
-git clone https://github.com/YL2209/luci-app-alpha-config.git package/luci-app-alpha-config
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' ./feeds/luci/collections/luci-light/Makefile
 
-
-# 修改 UA2F 的版本
-sed -i 's/^PKG_VERSION:=.*/PKG_VERSION:=4.9.2/' package/feeds/packages/ua2f/Makefile
-sed -i 's/^PKG_HASH:=.*/PKG_HASH:=02a20e8fc5d7c3c6999ad6143c2d4496b40b5b85286211f2e2b975e9485b25f0/' package/feeds/packages/ua2f/Makefile
 
 # 增加 UA2F 需要的从 CONFIG_NETFILTER_NETLINK_GLUE_CT=y
 awk '/# Netfilter Extensions/{print; getline; if ($0 ~ /^\*/) {print; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"} else {print $0; print "CONFIG_NETFILTER_NETLINK_GLUE_CT=y"}; next} 1' .config > .config.tmp && mv .config.tmp .config
